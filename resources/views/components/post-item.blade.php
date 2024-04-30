@@ -1,6 +1,6 @@
 <article class="bg-white p-4 shadow-sm rounded-sm">
     <a href="#" class="overflow-hidden block">
-        <img src="/storage/{{ $post->thumbnail }}" alt="{{ $post->title }}" class="w-full h-60 object-cover rounded transform hover:scale-110 transition duration-500">
+        <img src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}" class="w-full h-60 object-cover rounded transform hover:scale-110 transition duration-500">
     </a>
     <div class="mt-3">
         <a href="#">

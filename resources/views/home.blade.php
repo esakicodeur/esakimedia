@@ -8,7 +8,7 @@
         @foreach ($lastpost as $post)
             <div class="bg-white shadow-sm rounded-sm">
                 <a href="view.html" class="overflow-hidden block">
-                    <img src="/storage/{{ $post->thumbnail }}" alt="{{ $post->title }}" class="w-full h-96 object-cover rounded transform hover:scale-110 transition duration-500">
+                    <img src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}" class="w-full h-96 object-cover rounded transform hover:scale-110 transition duration-500">
                 </a>
                 <div class="p-4">
                     <a href="#">
@@ -41,6 +41,10 @@
             @foreach ($posts as $post)
                 <x-post-item :post="$post"></x-post-item>
             @endforeach
+        </div>
+
+        <div class="flex items-center justify-center mx-auto py-8">
+            {{ $posts->onEachSide(1)->links() }}
         </div>
     </div>
 </x-app-layout>
